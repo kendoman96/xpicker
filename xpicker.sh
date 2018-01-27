@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#to change replace xpicker.conf to /DIR/OF/CONF/xpicker.conf
+#to change, replace xpicker.conf to /DIR/OF/CONF/xpicker.conf
 
 	CONF=/home/jon/.shells/xpicker/xpicker.conf
 	NUMOFGUI=$(grep -v '^#' $CONF | grep -v '^$' | head -n 1)
