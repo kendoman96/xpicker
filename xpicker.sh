@@ -30,17 +30,21 @@ selection ()
 
 main ()
 	{
-	if [[ ! $WHATGUI || $WHATGUI = *[^0-9]* ]]; then
-		clear
-		echo "Thats not even a number."
-		start;
-	else
-		if [[ "WHATGUI" -lt 1 || "WHATGUI" -gt "NUMOFGUI" ]]; then
+	if [[ $WHATGUI = quit ]]; then
+		exit
+        else
+		if [[ ! $WHATGUI || $WHATGUI = *[^0-9]* ]]; then
 			clear
-			echo "That wasn't between 1 and "$NUMOFGUI
+			echo "Thats not even a number."
 			start;
 		else
-			selection;
+			if [[ "WHATGUI" -lt 1 || "WHATGUI" -gt "NUMOFGUI" ]]; then
+				clear
+				echo "That wasn't between 1 and "$NUMOFGUI
+				start;
+			else
+				selection;
+			fi
 		fi
 	fi
 	}
